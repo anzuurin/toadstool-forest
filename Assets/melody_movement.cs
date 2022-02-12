@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class kokee_movement : MonoBehaviour
+public class melody_movement : MonoBehaviour
 {
     private BoxCollider2D boxCollider;
     private Vector3 moveDelta;
@@ -21,9 +21,9 @@ public class kokee_movement : MonoBehaviour
 
         //swap sprite direction if ur going right or left
         if(moveDelta.x > 0)
-            transform.localScale = Vector3.one;
+            transform.localScale = new Vector3(2.6f, 2.5f, 1.0f);
         else if(moveDelta.x <0)
-            transform.localScale = new Vector3(-1,1,1);
+            transform.localScale = new Vector3(-2.6f,2.5f,1.0f);
 
         //making sure we can move in this direction by casting box there first, if its null, we can move
         hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Actor","Blocking"));
@@ -40,8 +40,6 @@ public class kokee_movement : MonoBehaviour
         //make it move
         Debug.Log(moveDelta.x * Time.deltaTime);
         transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
-        }else{
-            Debug.Log("COllided!");
         }
 
     }
