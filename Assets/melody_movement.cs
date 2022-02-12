@@ -38,7 +38,6 @@ public class melody_movement : MonoBehaviour
         if (hit.collider == null)
         {
         //make it move
-        Debug.Log(moveDelta.x * Time.deltaTime);
         transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
         }
 
