@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Collidable : MonoBehaviour
 {
-    public ContactFilter2D fitler;
+    public ContactFilter2D filter;
     private BoxCollider2D boxCollider;
     private Collider2D[] hits = new Collider2D[10];
 
@@ -13,18 +13,23 @@ public class Collidable : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
     }
 
-    proteced virtual void Update()
+    protected virtual void Update()
     {
         //collision work
-        boxCollider.OverlapCollider(filter,hits);
-        for (int i = 0, i < hits.len; i++)
+        boxCollider.OverlapCollider(filter, hits);
+        for (int i = 0; i < hits.Length; i++)
         {
             if(hits[i] == null)
                 continue;
 
-            Debug.Log(hits[i].name);
+            OnCollide(hits[i]);
 
             //array doesnt automatically clean up so we do it
+            hits[i] = null;
         }
+    }
+    protected virtual void OnCollide(Collider2D coll)
+    {
+        Debug.Log(coll.name);
     }
 }
