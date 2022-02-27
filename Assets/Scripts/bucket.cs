@@ -6,7 +6,6 @@ public class bucket : Collectable
 {
     public Sprite emptyBucket;
     public int waterAmount = 1;
-
     protected override void OnCollect()
     {
        if(!collected)

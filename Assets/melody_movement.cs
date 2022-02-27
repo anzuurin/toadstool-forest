@@ -21,9 +21,9 @@ public class melody_movement : MonoBehaviour
 
         //swap sprite direction if ur going right or left
         if(moveDelta.x > 0)
-            transform.localScale = new Vector3(2.6f, 2.5f, 1.0f);
+            transform.localScale = new Vector3(1f, 1f, 1.0f);
         else if(moveDelta.x <0)
-            transform.localScale = new Vector3(-2.6f,2.5f,1.0f);
+            transform.localScale = new Vector3(-1f,1f,1.0f);
 
         //making sure we can move in this direction by casting box there first, if its null, we can move
         hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Actor","Blocking"));
