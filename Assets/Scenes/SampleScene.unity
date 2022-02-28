@@ -156,6 +156,7 @@ MonoBehaviour:
   weaponSprites: []
   weaponPrices: 
   xpTable: 
+  player: {fileID: 0}
 --- !u!4 &205728731
 Transform:
   m_ObjectHideFlags: 0
@@ -209,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81346c1c667246429cefa582dd4524c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookAt: {fileID: 880710453}
+  lookAt: {fileID: 1987397975}
   boundX: 0.15
   boundY: 0.15
 --- !u!20 &519420031

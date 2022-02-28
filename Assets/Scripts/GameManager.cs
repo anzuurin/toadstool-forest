@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public List<int> xpTable; 
 
     // References
-    //public Player player; 
+    public Player player; 
 
     private void Awake()
     {
