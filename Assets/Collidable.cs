@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// A collidable requires the parent object to have a BoxCollider2D, which could be accomplished with the following
+// [RequireComponent(typeof(BoxCollider2D))]
 public class Collidable : MonoBehaviour
 {
     public ContactFilter2D filter;

@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collectible : MonoBehaviour
+public class Collectible : Collidable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    protected bool collected; 
+  
+    protected override void OnCollide(Collider2D coll){
+        Debug.Log("collectible is colliding");
+        if(coll.name == "Melody")
+            OnCollect(); 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    protected virtual void OnCollect(){
+        collected = true; 
     }
 }

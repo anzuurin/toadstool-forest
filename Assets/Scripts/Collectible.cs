@@ -9,7 +9,7 @@ public class Collectable : Collidable
 
     protected override void OnCollide(Collider2D coll)
     {
-        if (coll.name == "melody-player")
+        if (coll.name == "Melody")
             OnCollect();
     }
 

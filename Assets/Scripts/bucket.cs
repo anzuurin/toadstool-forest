@@ -13,9 +13,6 @@ public class bucket : Collectable
            collected = true;
            GetComponent<SpriteRenderer>().sprite = emptyBucket;
            Debug.Log("You have" + waterAmount + "water!");
-       }
-       
-    //    base.OnCollide(); //collected = true;
-       
+       }       
     }
 }
